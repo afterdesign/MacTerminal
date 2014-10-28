@@ -17,7 +17,7 @@ on run argv
             keystroke "t" using command down
         end tell
 
-        set commandToRun to "cd " & (folderName as string)
+        set commandToRun to "cd " & quoted form of (folderName as string)
         set current_tab to selected tab of first window whose frontmost is true
         do script commandToRun in current_tab
         do script "clear" in current_tab
