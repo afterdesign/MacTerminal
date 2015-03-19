@@ -56,6 +56,13 @@ Just type MacTerminal
     }
     ```
 
+    or (for compatibility with the nightly builds of iTerm 2 on Yosemite):
+    ```
+    {
+        "terminal"   :  "iterm-nightly"
+    }
+    ```
+
     If you wish you can also change it in Settings - Default.
 
 5. How do I change path to ``` osascript ``` ?
