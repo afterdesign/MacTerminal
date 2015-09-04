@@ -20,7 +20,14 @@ function run(argv) {
     );
 
     var gotoDirectory = 'cd ' + argv.join(' ');
-    var currentTerminalSession = Terminal.currentTerminal().currentSession();
+    if (parseInt(Terminal.version().replace(/\./g,'')) >= 2920150414) {
+        // Current iTerm2 - 2.9.20150414 or later 
+        var currentTerminalSession = Terminal.currentWindow.currentSession;
+    }
+    else {
+        // Old iTerm2 - Prior to 2.9.20150414 
+        var currentTerminalSession = Terminal.currentTerminal().currentSession();
+    }
     currentTerminalSession.write({text: gotoDirectory});
     currentTerminalSession.write({text: 'clear'});
 }
