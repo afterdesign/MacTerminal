@@ -1,5 +1,5 @@
 on run argv
-    if (count of argv) is 1 then
+    if count of argv is 1 then
         set folderName to item 1 of argv
     end if
     
