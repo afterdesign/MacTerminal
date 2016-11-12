@@ -32,3 +32,4 @@ function run(argv) {
     );
 
     SystemEvents.keyCode(36);
+}
