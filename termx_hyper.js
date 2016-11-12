@@ -26,7 +26,7 @@ function run(argv) {
         gotoDirectory
     );
     SystemEvents.keystroke(
-        "",
+        " ",
         {using: "return"}
     );
 
@@ -35,7 +35,7 @@ function run(argv) {
     );
 
     SystemEvents.keystroke(
-        "",
+        " ",
         {using: "return"}
     );
 
