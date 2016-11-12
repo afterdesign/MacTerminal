@@ -7,7 +7,7 @@ on run argv
         return
     end if
 
-    tell application "Hyper"
+    tell application "iTerm"
         if not frontmost then
             activate
             delay (1)
@@ -17,9 +17,9 @@ on run argv
             keystroke "t" using command down
         end tell
 
-        set commandToRun to "cd " & (folderName as string)
-        set current_tab to selected tab of first window whose frontmost is true
-        do script commandToRun in current_tab
-        do script "clear" in current_tab
+        tell current session of current window
+            write text "cd " & folderName
+            write text "clear"
+        end tell
     end tell
 end run
