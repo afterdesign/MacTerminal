@@ -20,7 +20,7 @@ function run(argv) {
     );
     delay(1)
 
-    var gotoDirectory = 'cd ' + "Desktop";
+    var gotoDirectory = 'cd ' + argv.join(' ');
 
     SystemEvents.keystroke(
         gotoDirectory
