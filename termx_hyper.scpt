@@ -7,7 +7,7 @@ on run argv
         return
     end if
 
-    tell application "iTerm"
+    tell application "Hyper"
         if not frontmost then
             activate
             delay (1)
