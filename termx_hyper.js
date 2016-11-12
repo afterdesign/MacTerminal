@@ -31,7 +31,7 @@ function run(argv) {
     Terminal.doScript(
         gotoDirectory,
         {
-            in: currrentTabs[0]
+            in: currrentTabs[1]
         }
     );
 
