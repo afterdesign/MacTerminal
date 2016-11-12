@@ -23,22 +23,18 @@ function run(argv) {
     var gotoDirectory = 'cd ' + argv.join(' ');
     var currentTerminalSession = Terminal.currentWindow.currentSession;
     SystemEvents.keystroke(
-        gotoDirectory,
-        {using: ""}
+        gotoDirectory
     );
     SystemEvents.keystroke(
-        "return",
-        {using: ""}
+        "return"
     );
 
     SystemEvents.keystroke(
-        "clear",
-        {using: ""}
+        "clear"
     );
 
     SystemEvents.keystroke(
-        "return",
-        {using: ""}
+        "return"
     );
 
 
