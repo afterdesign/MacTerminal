@@ -20,26 +20,15 @@ function run(argv) {
     );
     delay(1)
 
-    var gotoDirectory = 'cd ' + argv.join(' ');
-    var currentTerminalSession = Terminal.currentWindow.currentSession;
+    var gotoDirectory = 'cd ' + "Desktop";
+
     SystemEvents.keystroke(
         gotoDirectory
     );
-    SystemEvents.keystroke(
-        " ",
-        {using: "return"}
-    );
 
+    SystemEvents.keyCode(36);
     SystemEvents.keystroke(
         "clear"
     );
 
-    SystemEvents.keystroke(
-        " ",
-        {using: "return"}
-    );
-
-
-    // currentTerminalSession.write({text: gotoDirectory});
-    // currentTerminalSession.write({text: 'clear'});
-}
+    SystemEvents.keyCode(36);
