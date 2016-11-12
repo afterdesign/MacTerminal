@@ -9,9 +9,7 @@ function run(argv) {
     var Terminal = Application('Hyper');
     var SystemEvents = Application('System Events');
 
-    var frontmostTerminalWindow = Terminal.frontmost();
-
-    if(!frontmostTerminalWindow) {
+    if(! Terminal.frontmost()) {
         Terminal.activate();
         delay(1);
     }
@@ -21,24 +19,8 @@ function run(argv) {
         {using: "command down"}
     );
 
-    var currentlyUsedWindow = Terminal.windows.whose({frontmost : {'=' : true}});
-    var currrentTabs = currentlyUsedWindow[0].tabs.whose(
-        {selected : {'=' : true}}
-    );
-
-    var gotoDirectory = 'cd ' + argv[0];
-
-    Terminal.doScript(
-        gotoDirectory,
-        {
-            in: currrentTabs[1]
-        }
-    );
-
-    Terminal.doScript(
-        'clear',
-        {
-            in: currrentTabs[0]
-        }
-    );
+    var gotoDirectory = 'cd ' + argv.join(' ');
+    var currentTerminalSession = Terminal.currentWindow.currentSession;
+    currentTerminalSession.write({text: gotoDirectory});
+    currentTerminalSession.write({text: 'clear'});
 }
