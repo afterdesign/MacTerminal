@@ -1,6 +1,6 @@
 on run argv
     if (count of argv) is 1 then
-        set folderName to "Desktop"
+        set folderName to item 1 of argv
     end if
     
     if folderName is missing value then
@@ -14,9 +14,10 @@ on run argv
         end if
     
         tell application "System Events"
+            set commandToRun to "cd " & (folderName as string)
             keystroke "t" using command down
             delay (1)
-            keystroke "cd Desktop"
+            keystroke commandToRun
             keystroke return
             keystroke "clear"
             keystroke return
