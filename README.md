@@ -11,7 +11,11 @@ Default keybinding is `ctrl+cmd+t`. To change it go to:
 ```
 Sublime Text -> Preferences -> Package Settings -> termX -> Key Bindings
 ```
+The default keybinding:
 
+```
+{ "keys": ["ctrl+super+t"], "command": "open_termx_terminal" }
+```
 
 ## Settings
 To change settings go to:
@@ -20,27 +24,43 @@ To change settings go to:
 Sublime Text -> Preferences -> Package Settings -> termX -> Settings
 ```
 
-The available options will be explained in the left hand panel.
-
+**The available options:**
+   
+* `terminal`: Which application to run as your terminal. Available options:
+    - `terminal` (the default)
+    - `iterm`
+    - `hyper`
+* `osascript`: The path to osascript. Run `which osascript` in a terminal to find this path on your system. The default: `/usr/bin/osascript`
+* `debug`: Print additional info to the Sublime console for debugging issues. The default is: `false`.
 
 ### Alternative terminals:
 
 By default this plugin uses the native `Terminal.app`.
 You can also use [iTerm2](http://iterm2.com) and (thanks to awesome [@JohnBehnke](https://github.com/JohnBehnke)) [Hyper](http://hyper.is).
 
-
 ### Terminal opening strategy
 
-By default termX opens a new terminal in directory of the current file. You can change this to open in the current directory.
+By default termX opens a new terminal in directory of the current file, however, you can open in the project directory as well via the command palette options.
 
+You can change the default keybinding to open in the project directory via a keybinding arg:
+
+```
+{ "keys": ["ctrl+super+t"], "command": "open_termx_terminal", "args" : { "project": true } }
+```
+
+Or define a separate keybinding for that functionality:
+
+```
+{ "keys": ["ctrl+super+alt+t"], "command": "open_termx_terminal", "args" : { "project": true } }
+```
 
 ## FAQ
 
-1. The "Open in terminal" is greyed out.
-    This happens when there is no opened file and for now I don't know if
-    this is just a sublime bug or I need to change something.
+1. Why is "Open in terminal" greyed out?
+    
+    This happens when there is no opened file.
 
-2. Its not working for me.
+2. It's not working for me?
 
     First of all enable `debug` mode. 
     To do this open your settings and add: `"debug": true`
@@ -50,7 +70,7 @@ By default termX opens a new terminal in directory of the current file. You can 
     between ```---termX Debug Start---``` and ```---termX Debug End---```.
 
     You can always ping me on [twitter](http://twitter.com/afterdeign) or
-    simply write [issue on github](https://github.com/afterdesign/termX/issues).
+    simply write an [issue on github](https://github.com/afterdesign/termX/issues).
 
 ## Contact
 
