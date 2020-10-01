@@ -1,4 +1,4 @@
-# Sublime Text terminal plugin for macOS
+# Sublime Text terminal plugin for macOS and effort
 
 Fully packaged and able to open in a new tab.
 
